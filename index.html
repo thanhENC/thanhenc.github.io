@@ -1,19 +1,464 @@
-<!DOCTYPE html>
-
 <html>
 
 <head>
+    <title>Design ITUS Academic Club</title>
+    <meta name="description" content="Design ITUS Academic Club - HCMUS" />
+    <link rel="shortcut icon" href="/assets/favicon.png">
 
-<title>Thanh Enc</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
 
-<link rel=”stylesheet” href=”style.css”>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/scripts.js"></script>
 
+    <!-- To use jquery to remove a block of html code that generate the overlay of the video... bruh... -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- aos -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script>
+        AOS.init({
+            duration: 1000,
+        });
+    </script>
+
+    <!-- Scroll-out -->
+    <!-- <script src="https://unpkg.com/scroll-out/dist/scroll-out.min.js"></script> -->
 </head>
 
 <body>
 
-<h1>Chưa có gì ở đây cả, mấy hum sau quay lại ih</h1>
+    <!-- 
+WELCOME TO
+  ___  ___ ___ ___ ___ _  _ 
+ |   \| __/ __|_ _/ __| \| |
+ | |) | _|\__ \| | (_ | .` |
+ |___/|___|___/___\___|_|\_|                           
+  ___ _____ _   _ ___ 
+ |_ _|_   _| | | / __|
+  | |  | | | |_| \__ \
+ |___| |_|  \___/|___/
+
+     -->
+
+    <script>
+        AOS.init();
+    </script>
+
+
+
+    <div class="row mobile-padding">
+        <div class="col-2" style="color: transparent;">.</div>
+        <div class="col-8">
+
+            <!-- Mobile announcement -->
+            <div class="mobile-announcement">
+                Welcome to Design ITUS!<br>
+                Our website is suggested to be viewed on a desktop screen for the best
+                experience. Thank you!
+            </div>
+
+            <!-- Menu -->
+            <div id="myTop" class="row" style="padding-top: var(--padding-top);">
+                <div class="col-5">
+                    <img src="assets/logo.png" style="height: var(--menu-height); image-rendering: auto; float: left;">
+                    <div style="font-size: larger; font-weight: 800; letter-spacing: 1.3; padding-top: 7px;">DESIGN
+                        ITUS
+                    </div>
+                    <div style="font-size:x-small; font-weight: 400; letter-spacing: 0.4;">HCMUS -
+                        ACADEMIC CLUB</div>
+                </div>
+                <div style="text-align: center; padding-top: 8px;">
+                    <div class="col-1s" style="color: transparent;">.</div>
+                    <div class="col-1s" style="margin-top: 6px;"><a href="https://designitus.github.io/outrspace">Outr
+                            Space</a></div>
+                    <div class="col-1s" style="margin-top: 6px;"><a onclick="showSnackBar()">Seminars</a></div>
+                    <div class="col-1s" style="margin-top: 6px;"><a onclick="showSnackBar()">Members</a></div>
+                    <div class="col-1s" style="margin-top: 6px;"><a href="#myFooter" rel="">Contact</a></div>
+                    <!-- SnackBar -->
+                    <div id="snackbar">Will be open soon</div>
+                </div>
+
+                <!-- <div class="col-4">
+                    <div class="row"
+                        style="height: var(--menu-height); display: flex; align-items: center; text-align: center;">
+                        <div class="col-1" style="margin: 6px;">Outr Space</div>
+                        <div class="col-1" style="margin: 6px;">Seminars</div>
+                        <div class="col-1" style="margin: 6px;">Our Members</div>
+                        <div class="col-1" style="margin: 6px;">Contact Us</div>
+                    </div>
+                </div> -->
+            </div>
+
+            <div class="h80"></div>
+            <div class="t3d">
+                <!-- The header rectangle -->
+                <div class="header-rectangle">
+                    <img src="assets/VideoPreview.gif" width="100%">
+                </div>
+                <!-- Header -->
+                <div class="row" style="padding-top: 100px;">
+
+                    <div class="col-10 t3d-quick">
+                        <div style="height: 6px; width: 72px; background-color: var(--theme-color-1);"></div>
+                        <div class="big-title" style="letter-spacing: 0px;">CREATIVITY</div>
+                        <div>
+                            <div class="big-title" style="float: left; font-weight: 300; letter-spacing: 2px;">IS
+                                A&nbsp;</div>
+                            <div class="big-title" style="float: left; letter-spacing: 2px;">DRUG</div>
+                            <div class="big-title" style="color: var(--theme-color-2);">.</div>
+                        </div><br>
+                        <div class="sub-title" style="letter-spacing: 6.0;">CROP YOUR BRAIN AND</div>
+                        <div class="sub-title" style="letter-spacing: 4.3;">MAKE IT MORE BEAUTIFUL</div>
+                    </div>
+
+                    <div class="col-2 t3d-quick mobile-none-display">
+                        <!-- Video Play Button -->
+                        <a class="video-play-button" onclick="openNav()" style="position: relative; top: 72px;">
+                            <span></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video -->
+            <!-- DIV to add the overlay -->
+            <div id="overlay-parent"></div>
+            <!-- <div id="overlay-id" class="overlay">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <div class="overlay-content">
+
+                    <div style="padding:0 0 0 0;position:relative;">
+                        <iframe
+                            src="https://player.vimeo.com/video/462956848?color=ffffff&title=0&byline=0&portrait=0"
+                            style="position: relative;top:0;left:0;width:140vh;height:80vh; border-radius: 24px;"
+                            frameborder="0" allow="autoplay; fullscreen" allowfullscreen id="video">
+                        </iframe>
+                    </div>
+                    <script src="https://player.vimeo.com/api/player.js"></script>
+                </div>
+            </div> -->
+
+            <div class="h300"></div>
+
+            <!-- Join Us Button -->
+            <div class="row">
+                <div class="col-4">.</div>
+                <div class="col-4">
+                    <a href="https://bom.to/DesignITUS2020" target="_blank">
+                        <div class="button" data-aos="fade-up">JOIN US</div>
+                    </a>
+                </div>
+                <div class="col-4">.</div>
+            </div>
+
+
+            <!-- We are Design ITUS -->
+            <div style="text-align: center; margin-top: 120px;">
+                <div class="sub-title-2" data-aos="fade-up">We are</div>
+                <div class="big-title" style="padding: 24px 0; letter-spacing: 2px;" data-aos="fade-up">
+                    DESIGN ITUS
+                </div>
+                <div class="sub-title-2" data-aos="fade-up"><b>ACADEMIC CLUB</b> FROM FACULTY OF</div>
+                <div class="sub-title-2" data-aos="fade-up"><b>I</b>NFORMATION <b>T</b>ECHNOLOGY, <b>U</b>NIVERSITY OF
+                    <b>S</b>CIENCE
+                </div>
+            </div>
+
+
+            <!-- We do -->
+            <div style="text-align: center; margin-top: 120px;">
+                <div class="sub-title-2" data-aos="fade-up">We do</div>
+            </div>
+
+
+
+            <!-- Graphic Design -->
+            <div style="height: 100%;">
+                <div class="row" style="margin-top: 180px;">
+                    <div>
+                        <!-- Products -->
+                        <div class="col-6">
+                            <!-- <div
+                            style="height: var(--section-height); max-width: 100%; background-color: rgb(214, 214, 214);">
+                        </div> -->
+                            <img src="assets/g1.png" class="bdrds" style="width: 100%;" data-aos="fade-up">
+                        </div>
+                        <!-- Text -->
+                        <div class="col-6" style="text-align: right;">
+                            <div style="height: var(--section-text-margin);"></div>
+                            <div class="big-title" data-aos="fade-right">GRAPHIC</div>
+                            <div class="big-title" data-aos="fade-right"
+                                style="color: var(--theme-color-1); float: right;">DESIGN</div>
+                            <div class="big-title" data-aos="fade-right" style="color: var(--theme-color-2);">.</div>
+                            <div class="sub-title-3" data-aos="fade-right">ILLUSTRATIONS -
+                                MULTIMEDIA PRODUCTS</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Photography -->
+            <div style="height: 100%;">
+                <div class="row" style="margin-top: var(--section-margin);">
+                    <div>
+                        <!-- Text -->
+                        <div class="col-6" style="text-align: left;">
+                            <div style="height: var(--section-text-margin);"></div>
+                            <div class="big-title" data-aos="fade-right">PHOTO</div>
+                            <div class="big-title" data-aos="fade-right"
+                                style="color: var(--theme-color-1); float: left;">GRAPHY</div>
+                            <div class="big-title" data-aos="fade-right" style="color: var(--theme-color-2);">.</div>
+                            <div class="sub-title-3" data-aos="fade-right">PHOTOS HUNTING - COLOR
+                                BLENDING</div>
+                        </div>
+                        <!-- Products -->
+                        <div class="col-6">
+                            <!-- <div
+                            style="height: var(--section-height); max-width: 100%; background-color: rgb(214, 214, 214);">
+                        </div> -->
+                            <img src="assets/p1.jpg" class="bdrds" style="width: 100%;" data-aos="fade-up">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Video Editing -->
+            <div style="height: 40%;">
+                <div class="row" style="margin-top: var(--section-margin);">
+                    <div>
+                        <!-- Products -->
+                        <div class="col-6">
+                            <!-- <div
+                                style="height: var(--section-height); max-height: 100%; background-color: rgb(214, 214, 214);">
+                            </div> -->
+                            <img src="assets/v1.gif" class="bdrds" style="width: 100%;" data-aos="fade-up">
+                        </div>
+                        <!-- Text -->
+                        <div class="col-6" style="text-align: right;">
+                            <div style="height: var(--section-text-margin);"></div>
+                            <div class="big-title" data-aos="fade-right">VIDEO</div>
+                            <div class="big-title" data-aos="fade-right"
+                                style="color: var(--theme-color-1); float: right;">MAKING</div>
+                            <div class="big-title" data-aos="fade-right" style="color: var(--theme-color-2);">.</div>
+                            <div class="sub-title-3" data-aos="fade-right">VIDEO MAKING & EDITING -
+                                MOTION
+                                GRAPHIC</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Drawing -->
+            <div style="height: 100%;">
+                <div class="row" style="margin-top: var(--section-margin);">
+                    <div>
+                        <!-- Text -->
+                        <div class="col-6" style="text-align: left;">
+                            <div style="height: var(--section-text-margin);"></div>
+                            <div class="big-title" data-aos="fade-right">DRAWING,</div>
+                            <div class="big-title" data-aos="fade-right"
+                                style="color: var(--theme-color-1); float: left;">SKETCHING</div>
+                            <div class="big-title" data-aos="fade-right" style="color: var(--theme-color-2);">.</div>
+                            <div class="sub-title-3" data-aos="fade-right">HAND & DIGITAL DRAWING -
+                                COMICS</div>
+                        </div>
+                        <!-- Products -->
+                        <div class="col-6">
+                            <!-- <div
+                            style="height: var(--section-height); max-width: 100%; background-color: rgb(214, 214, 214);">
+                        </div> -->
+                            <img src="assets/d1.jpg" class="bdrds" style="width: 100%;" data-aos="fade-up">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-2" style="color: transparent;">.</div>
+    </div>
+
+
+
+    <div id="myFooter" name="myFooter"
+        style="width: 100%; margin-top: var(--section-margin); background-color: rgb(44, 44, 44); padding: 50px 20px;">
+        <div class="row">
+            <div class="col-3" style="padding: var(--footer-padding);">
+                <img src="assets/logo.png" style="width: 80%; margin: 0% 10%;">
+            </div>
+            <div class="col-3" style="color: white; padding: var(--footer-padding);">
+                <div class="footer-text" style="font-size: 20px; font-weight: 500;">
+                    ABOUT DESIGN ITUS
+                </div>
+                <div class="footer-text">
+                    <br>DESIGN ITUS club was established on October 25, 2010, is an academic club of the Faculty of
+                    Information Technology, Vietnam National University, Ho Chi Minh City, University of Science.<br>
+                    The club is a place for students with passion for graphic design, UI/UX design, photography,
+                    photo editing, video making and editing, hand-drawing and digital painting.
+                </div>
+            </div>
+            <div class="col-3" style="color: white; padding: var(--footer-padding);">
+                <div class="footer-text" style="font-size: 20px; font-weight: 500;">
+                    CONTACT US
+                </div>
+                <div class="footer-text">
+                    <br>
+                    <svg style="fill: white; position: relative; top: 4px;" xmlns="http://www.w3.org/2000/svg"
+                        width="20" height="20" viewBox="0 0 24 24">
+                        <path
+                            d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z" />
+                    </svg>
+                    Mail
+                    <br>
+                    <a href="mailto:designitus.hcmus@gmail.com" target="_blank">
+                        <div style="color: white; font-weight: 400;">designitus.hcmus@gmail.com</div>
+                    </a>
+
+                    <br>
+                    <svg style="fill: white; position: relative; top: 4px;" xmlns="http://www.w3.org/2000/svg"
+                        width="20" height="20" viewBox="0 0 24 24">
+                        <path
+                            d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z" />
+                    </svg>
+                    Facebook
+                    <br>
+                    <a href="https://www.facebook.com/design.itus" target="_blank">
+                        <div style="color: white; font-weight: 400;">fb.com/design.itus</div>
+                    </a>
+
+                </div>
+            </div>
+            <div class="col-3" style="color: white; padding: var(--footer-padding);">
+                <div class="footer-text" style="font-size: 20px; font-weight: 500;">
+                    LOCATION
+                </div>
+                <div class="footer-text">
+                    <br>
+                    <svg style="fill: white; position: relative; top: 4px;" xmlns="http://www.w3.org/2000/svg"
+                        width="20" height="20" viewBox="0 0 24 24">
+                        <path
+                            d="M12 0c-4.198 0-8 3.403-8 7.602 0 4.198 3.469 9.21 8 16.398 4.531-7.188 8-12.2 8-16.398 0-4.199-3.801-7.602-8-7.602zm0 11c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z" />
+                    </svg>
+                    Nguyen Van Cu Campus
+                    <br>
+                    <a href="https://goo.gl/maps/KY9qi2E3W8aoo7WQ6" target="_blank">
+                        <div style="color: white; font-size: smaller;">227 Nguyen Van Cu, Ward 4, District 5, Ho Chi
+                            Minh
+                            City, Vietnam</div>
+                    </a>
+
+                    <br>
+                    <svg style="fill: white; position: relative; top: 4px;" xmlns="http://www.w3.org/2000/svg"
+                        width="20" height="20" viewBox="0 0 24 24">
+                        <path
+                            d="M12 0c-4.198 0-8 3.403-8 7.602 0 4.198 3.469 9.21 8 16.398 4.531-7.188 8-12.2 8-16.398 0-4.199-3.801-7.602-8-7.602zm0 11c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z" />
+                    </svg>
+                    Linh Trung Campus
+                    <br>
+                    <a href="https://goo.gl/maps/7sHC26vMjaNS3iGs9" target="_blank">
+                        <div style="color: white; font-size: smaller;">Linh Trung Ward, Thu Duc District, Ho Chi Minh
+                            City
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div style="width: 100%; height: 28px;"></div>
+
+        <div class="footer-text" style="text-align: center;">
+            © 2020 Design ITUS Academic Club. All Rights Reserved.
+        </div>
+    </div>
+
+    <div style="position: fixed; bottom: 20px; right: 20px;" class="mobile-none-display">
+        <a href="#myTop">
+            <div style="width: 32px; height: 32px; text-align: center; font-size: 20px; color: rgb(134, 134, 134);">
+                &UpArrowBar;</div>
+        </a>
+    </div>
 
 </body>
+
+<!-- ---------------------- Back to top ---------------------- -->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"> </script>
+<script type="text/javascript">
+    var scrolltotop = {
+        setting: {
+            startline: 100,
+            scrollto: 0,
+            scrollduration: 1e3,
+            fadeduration: [500, 100]
+        },
+        controlHTML: '<div style="font-size: x-large; color: grey;">&Uarr;</div>',
+        controlattrs: {
+            offsetx: 20,
+            offsety: 20
+        },
+        anchorkeyword: "#top",
+        state: {
+            isvisible: !1,
+            shouldvisible: !1
+        },
+        scrollup: function () {
+            this.cssfixedsupport || this.$control.css({
+                opacity: 0
+            });
+            var t = isNaN(this.setting.scrollto) ? this.setting.scrollto : parseInt(this.setting.scrollto);
+            t = "string" == typeof t && 1 == jQuery("#" + t).length ? jQuery("#" + t).offset().top : 0, this.$body.animate({
+                scrollTop: t
+            }, this.setting.scrollduration)
+        },
+        keepfixed: function () {
+            var t = jQuery(window),
+                o = t.scrollLeft() + t.width() - this.$control.width() - this.controlattrs.offsetx,
+                s = t.scrollTop() + t.height() - this.$control.height() - this.controlattrs.offsety;
+            this.$control.css({
+                left: o + "px",
+                top: s + "px"
+            })
+        },
+        togglecontrol: function () {
+            var t = jQuery(window).scrollTop();
+            this.cssfixedsupport || this.keepfixed(), this.state.shouldvisible = t >= this.setting.startline ? !0 : !1, this.state.shouldvisible && !this.state.isvisible ? (this.$control.stop().animate({
+                opacity: 1
+            }, this.setting.fadeduration[0]), this.state.isvisible = !0) : 0 == this.state.shouldvisible && this.state.isvisible && (this.$control.stop().animate({
+                opacity: 0
+            }, this.setting.fadeduration[1]), this.state.isvisible = !1)
+        },
+        init: function () {
+            jQuery(document).ready(function (t) {
+                var o = scrolltotop,
+                    s = document.all;
+                o.cssfixedsupport = !s || s && "CSS1Compat" == document.compatMode && window.XMLHttpRequest, o.$body = t(window.opera ? "CSS1Compat" == document.compatMode ? "html" : "body" : "html,body"), o.$control = t('<div id="topcontrol">' + o.controlHTML + "</div>").css({
+                    position: o.cssfixedsupport ? "fixed" : "absolute",
+                    bottom: o.controlattrs.offsety,
+                    right: o.controlattrs.offsetx,
+                    opacity: 0,
+                    cursor: "pointer"
+                }).attr({
+                    title: "Scroll to Top"
+                }).click(function () {
+                    return o.scrollup(), !1
+                }).appendTo("body"), document.all && !window.XMLHttpRequest && "" != o.$control.text() && o.$control.css({
+                    width: o.$control.width()
+                }), o.togglecontrol(), t('a[href="' + o.anchorkeyword + '"]').click(function () {
+                    return o.scrollup(), !1
+                }), t(window).bind("scroll resize", function (t) {
+                    o.togglecontrol()
+                })
+            })
+        }
+    };
+    scrolltotop.init(); 
+</script> -->
+<!-- ---------------------- /Back to top ---------------------- -->
 
 </html>
