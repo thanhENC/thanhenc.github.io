@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Survey Form</title>        
+    </head>
+    <body>
+        <div class="form-container">
+            <form action="#" method="get">
+                <label for="username">Username:</label><br>
+                <input type="text" id="username" placeholder="Enter your username" required><br><br>
+                <label for="password">Password:</label><br>
+                <input type="password" id="password" placeholder="Enter your password" required><br><br>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" placeholder="Enter your email" required><br><br>
+                <label for="phone">Phone:</label><br>
+                <input type="tel" id="phone" placeholder="Enter your phone number" required><br><br>
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset">
+            </form>
+        </div>
+        <hr color="red">
+        <div class="checkbox">
+            <form action="#" method="get">
+                <label for="checkbox">Bạn thích xem phim ở ứng dụng nào:</label><br>
+                <input type="checkbox" id="chkFilm" name="chkFilm" value="clip">ClipTv<br>
+                <input type="checkbox" id="chkFilm" name="chkFilm" value="youtube">Youtube<br>
+                <input type="checkbox" id="chkFilm" name="chkFilm" value="facebook">Facebook<br>
+                <input type="checkbox" id="chkFilm" name="chkFilm" value="zalo">Zalo<br>
+            </form>
+        </div>
+        <hr color="red">
+        <div class="radiobutton">
+            <form action="#" method="get">
+                <label for="radiobutton">Giới tính:</label><br>
+                <input type="radio" id="radiobutton" name="radSex" value="Nam">Nam<br>
+                <input type="radio" id="radiobutton" name="radSex" value="Nữ">Nữ<br>
+                <input type="radio" id="radiobutton" name="radSex" value="Khác">Khác<br>
+            </form>
+        </div>
+        <hr color="red">
+        <div class="select">
+            <form action="#" method="get">
+                <label for="select">Bạn thích xem phim ở ứng dụng nào:</label><br>
+                <select name="select" id="select">
+                    <option value="clip">ClipTv</option>
+                    <option value="youtube">Youtube</option>
+                    <option value="facebook">Facebook</option>
+                    <option value="zalo">Zalo</option>
+                </select>
+            </form>
+        </div>
+        <hr color="red">
+        <div class="textarea">
+            <form action="#" method="get">
+                <label for="textarea">Bạn thích xem phim ở ứng dụng nào:</label><br>
+                <textarea name="textarea" id="textarea" cols="30" rows="10"></textarea>
+            </form>
+        </div>
+        <hr color="red">
+        <div class="optiongroup"
+            <form action="#" method="get">
+                <label for="optiongroup">Bạn thích xem phim ở ứng dụng nào:</label><br>
+                <select name="optiongroup" id="optiongroup" size="10" multiple>
+                    <optgroup label="Phim lẻ">
+                        <option value="clip">ClipTv</option>
+                        <option value="youtube">Youtube</option>
+                        <option value="facebook">Facebook</option>
+                        <option value="zalo">Zalo</option>
+                    </optgroup>
+                    <optgroup label="Phim bộ">
+                        <option value="clip">ClipTv</option>
+                        <option value="youtube">Youtube</option>
+                        <option value="facebook">Facebook</option>
+                        <option value="zalo">Zalo</option>
+                    </optgroup>
+                </select>
+            </form>
+        </div>
+        <hr color="red">
+        <div class="hidden-field">
+            <form action="#" method="get">
+                <label for="hidden-field">Bạn thích xem phim ở ứng dụng nào:</label><br>
+                <input type="hidden" id="hidden-field" name="hidden-field" value="hidden">
+            </form>
+        </div>
+        <hr color="red">
+        <div class="file-upload">
+            <form action="#" method="post">
+                <label for="file-upload">Bạn thích xem phim ở ứng dụng nào:</label><br>
+                <input type="file" id="file-upload" name="file-upload">
+            </form>
+        </div>
+    </body>
+</html>
