@@ -1,0 +1,6 @@
+Future
+Health
+Life
+Money
+Personal
+Phobias
