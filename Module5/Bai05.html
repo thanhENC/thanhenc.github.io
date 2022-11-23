@@ -1,8 +1,26 @@
 <html>
     <head>
         <title>Bài tập 05 - Module5</title>
+        <script>
+            function getDay(){
+                var d = new Date();
+                var day = d.getDate();
+                var month = d.getMonth() + 1;
+                if (d < 10) {
+                    day = "0" + day;
+                }
+                if (month < 10) {
+                    month = "0" + month;
+                }
+
+                var year = d.getFullYear();
+                var date = day + "/" + month + "/" + year;
+                document.form.txtToday.value = date;
+                document.form.txtFirstName.focus();                
+            }
+        </script>
     </head>
-    <body style="background-color: cyan;">
+    <body style="background-color: cyan;" onload="getDay()">
         <center><img src="Bai5/Logo.gif">
             <h1>Neonatal Feeding Study</h1>
         </center>
