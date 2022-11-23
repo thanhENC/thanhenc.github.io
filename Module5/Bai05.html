@@ -1,0 +1,157 @@
+<html>
+    <head>
+        <title>Bài tập 05 - Module5</title>
+    </head>
+    <body style="background-color: cyan;">
+        <center><img src="Bai5/Logo.gif">
+            <h1>Neonatal Feeding Study</h1>
+        </center>
+        <form name="form">
+            <table width="50%" align="center">
+                <tr>
+                    <td colspan="3" align="right">Today is: <input type="text" name="txtToday" readonly="readonly"></td>
+                </tr>
+                <tr>
+                    <td>
+                        1) Name (first,last):
+                    </td>
+                    <td colspan="2">
+                        <input type="text" name="txtFirstName" >
+                        <input type="text" name="txtLastName">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        2) Medical Record #:
+                    </td>
+                    <td colspan="2">
+                        <input type="text" name="txtMediRec">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        3) Date of birth:
+                    </td>
+                    <td colspan="2">
+                        <input type="text" name="txtDate">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        4) Physician:
+                    </td>
+                    <td colspan="2">
+                        <select name="drpPhysicOpt" >
+                        <option value="Dr.WA">Dr. Warren Albert</option>
+                        <option value="Middle">Lionel Messi</option>
+                        <option value="South">Cris Ronaldo</option>
+                        <option value="Other">Other</option>
+                </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        &nbsp;&nbsp;&nbsp;If other (specify):
+                    </td>
+                    <td colspan="2">
+                        <input type="text" name="txtPhysicOth">
+                    </td>
+                </tr>
+                <tr>
+                    <td width="45%" class="auto-style1">
+                        5) 1 Minute APGAR Score: Each score must be 0, 1, or 2
+                    </td>
+                    <td width="45%" class="auto-style1">
+                        Activity
+                    </td>
+                    <td width="4%" class="auto-style1">
+                        <input type="text" name="txtActivity" width="5px" >
+                    </td>
+                </tr>
+                <tr>
+                    <td width="45%">
+                    </td>
+                    <td width="45%">
+                        Pulse
+                    </td>
+                    <td width="10%">
+                        <input type="text" name="txtPulse" width="5px" onChange="checkpul()">
+                    </td>
+                </tr>
+                <tr>
+                    <td width="45%">
+                    </td>
+                    <td width="45%">
+                        Grimace (Reflex, Irritability)
+                    </td>
+                    <td width="10%">
+                        <input type="text" name="txtGrimace" width="5px">
+                    </td>
+                </tr>
+                <tr>
+                    <td width="45%">
+                    </td>
+                    <td width="45%">
+                        Appearance (Skin Color)
+                    </td>
+                    <td width="10%">
+                        <input type="text" name="txtAppearance" width="5px" >
+                    </td>
+                </tr>
+                <tr>
+                    <td width="45%">
+                    </td>
+                    <td width="45%">
+                        Respiration
+                    </td>
+                    <td width="10%">
+                        <input type="text" name="txtRespiration" width="5px" >
+                    </td>
+                </tr>
+   
+                <tr>
+                    <td width="45%">
+                    </td>
+                    <td width="45%">
+                        Respiration_test
+                    </td>
+                    <td width="10%">
+                        <input type="text" name="txttest" width="5px" >
+                    </td>
+                </tr>
+                <tr>
+                    <td width="45%">
+                    </td>
+                    <td width="45%">
+                        <h5>TOTAL</h5>
+                    </td>
+                    <td width="10%">
+                        <input type="text" name="txtTotal" width="5px" >
+                    </td>
+                </tr>
+                <tr>
+                    <td width="45%">
+                        6) Birth weight (gms): Weight must be >=1200 gms.
+                    </td>
+                    <td colspan="2">
+                        <input type="text" name="txtBirthWeight" width="5px">
+                    </td>
+                </tr>
+                <tr>
+                    <td width="45%">
+                        7) Parental Consent (required):
+                    </td>
+                    <td colspan="2">
+                        <input type="checkbox" name="chbParental">
+                    </td>
+                </tr>
+                <tr align="center">
+                    <td colspan="3" align="center">
+                        <input type="button" name="btnRegister" value="Register" onClick="OK()"> &nbsp;&nbsp;
+                        <input type="button" name="btnReload" value="Reload Page" onClick="history.go(0)">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
