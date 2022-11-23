@@ -8,6 +8,10 @@
         th, td{
             align: center;
         }
+        
+        body{
+            align:center;
+        }
     </style>
     <script>
         function ThanhTien(i){
@@ -56,25 +60,35 @@
                 <td>Chuột Quang</td>
                 <td>10$<input type="hidden" name="dg1" id="dg1" value="10"></td>
                 <td><input type="number" name="txtSoLuong1" id="txtSoLuong1" onchange="ThanhTien(1)"></td>
-                <td><input type="text" name="txtThanhTien1" id="txtThanhTien1"></td>
+                <td><input type="text" name="txtThanhTien1" id="txtThanhTien1" disabled="true"></td>
             </tr>
             <tr>
                 <td>B124</td>
                 <td>Bàn Phím</td>
                 <td>20$<input type="hidden" name="dg2" id="dg2" value="20"></td>
                 <td><input type="number" name="txtSoLuong2" id="txtSoLuong2" onchange="ThanhTien(2)"></td>
-                <td><input type="text" name="txtThanhTien2" id="txtThanhTien2"></td>
+                <td><input type="text" name="txtThanhTien2" id="txtThanhTien2" disabled="true"></td>
             </tr>
             <tr>
                 <td>U125</td>
                 <td>USB KingMax</td>
                 <td>15$<input type="hidden" name="dg3" id="dg3" value="15"></td>
                 <td><input type="number" name="txtSoLuong3" id="txtSoLuong3" onchange="ThanhTien(3)"></td>
-                <td><input type="text" name="txtThanhTien3" id="txtThanhTien3"></td>
+                <td><input type="text" name="txtThanhTien3" id="txtThanhTien3" disabled="true"></td>
+            </tr>
+            <tr>
+                <td colspan="5">
+                    <hr>
+                </td>
             </tr>
             <tr>
                 <td colspan="4" align="right">Total</td>
                 <td><input type="text" name="txtTongTien" id="txtTongTien" disabled="true"></td>
+            </tr>
+            <tr>
+                <td colspan="5" align="right">
+                    <button type="button" onclick="TongTien()">Tổng Cộng</button>
+                </td>
             </tr>
         </table>
     </form>
