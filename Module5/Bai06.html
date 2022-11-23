@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Untitled Document</title>
+    <style type="text/css">
+        #tdday {
+            background-color: #FFCC33;
+            font-weight: bold;
+        }
+       
+        #leftHalf {
+            background: url(Bai6/hinh/Wrap.jpg);
+            width: 6%;
+            position: absolute;
+            left: 0px;
+            height: 100%;
+        }
+       
+        #rightHalf {
+            background: url(Bai6/hinh/Wrap.jpg);
+            width: 6%;
+            position: absolute;
+            right: 0px;
+            height: 100%;
+        }
+       
+        h4 {
+            font-size: 20px;
+            color: #009933;
+        }
+       
+        a {
+            text-decoration: none
+        }
+       
+        a:hover {
+            color: red;
+            font-weight: bold;
+        }
+
+    </style>
+    <script>
+        function tinhNgay(){
+            var today = new Date();
+            var christmas = new Date(today.getFullYear(), 11, 25);
+         
+            document.getElementById("dvToDay").innerHTML = "Today is " + today.toDateString().substring(4, 10);
+            
+            if (today.getMonth() == 11 && today.getDate() > 25) {
+                christmas.setFullYear(christmas.getFullYear() + 1);
+            }
+            
+            var one_day = 1000 * 60 * 60 * 24;
+            document.getElementById("dvCountDay").innerHTML = "Only " + Math.ceil((christmas.getTime() - today.getTime()) / (one_day)) + " days until Christmas";
+            setTimeout("ChristmasCountdown()", 1000);
+        }
+    </script>
+ 
+</head>
+
+<body onload="tinhNgay()">
+    <div id=leftHalf></div>
+    <div id=rightHalf></div>
+    <table width="89%" align="center">
+        <tr>
+            <td rowspan="4" width="8%" bgcolor="#000000" valign="top">
+                <h4>
+                    <font color="white">
+                        Why don't you visit our:<br />
+                    </font>
+                </h4>
+                <font color="#009933">
+                    Home Page<br /> Angels
+                    <br /> Cards
+                    <br /> Collectible
+                    <br /> Creche
+                    <br /> Garland
+                    <br /> Gift Wrap<br /> Light
+                    <br /> Nutcracker
+                    <br /> Ornaments
+                    <br /> Santa
+                    <br /> Train
+                    <br /> Tree
+                    <br /> Village
+                    <br /> Wreath
+                    <br /></font>
+            </td>
+            <td colspan="3" align="center">
+                <img src="Bai6/hinh/Logo.jpg" </td>
+        </tr>
+        <tr>
+            <td colspan="3" id="tdday" align="center">
+                <hr/>
+                <div id="dvToDay"></div>
+                <div id="dvCountDay"></div>
+                <hr />
+            </td>
+        </tr>
+        <tr align="left">
+            <td width="46%">
+                <h4>Welcome!</h4>
+                <p>
+                    <img src="Bai6/hinh/Bells.jpg" / align="left">Welcome to <a>North Pole Novelties</a>. Consider us your complete holiday store. Whether you're a collector or simply looking for a beautiful piece to treasure for years, you'll find it at NPN.
+                    Please click on one of the many links to explore all we have to offer.</p>
+                <h4>News Flash!</h4>
+                <p>
+                    North Pole Novelties is proud to announce a new line of <a>Lasseter Old Towne Village collectible houses</a>. Start building your collection of these wonderful miniature porcelain houses and shops.
+                </p>
+                <p>
+                    Each model has accessories to enhance the collection. Be sure to order extra trees, fences, street lights and signs to bring activity and a festive atmosphere to your miniature town.
+                </p>
+            </td>
+            <td width="46%">
+                <h4>Who Are We?</h4>
+                <p>
+                    <img src="Bai6/hinh/Taylor.png" width="100px" align="right" />Located in Seton Grove, Minnesota, North Pole Novelties is one of the oldest and largest holiday stores in the country. The store was founded in 1968 by <a>David Watkins</a> (shown here).
+                    Today, David, his family, and over 300 employees manage the daily operation of making the holiday season last all year.
+                </p>
+                <p>
+                    The store itself is the size of two football fields and attracts visitors from around the world. If you can't pay us a visit, order our catalogue. We will deliver to any spot in the United States and overseas. In a rush? We can deliver your order overnight!
+                    We also gift wrap.</p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" align="center">
+                <hr />
+                <font color="#009933">
+                    North Pole Noveltles<br /> 25 Oakdale Avenue<br /> Seton Grove, MN 53112<br /> Telephone: (404) 555-1225
+                </font>
+            </td>
+        </tr>
+    </table>
+
+
+
+</body>
+
+</html>
