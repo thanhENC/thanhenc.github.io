@@ -1,18 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Bài tập 4 - Module 5</title>
+    <style type="text/css">
+        th, td{
+            align: center;
+        }
+    </style>
     <script>
-        function Hello(){
-            document.getElementById("greeting").innerHTML = "Hello!";
+        function ThanhTien(i){
+            try{
+                var dongia = document.getElementById("dg" + i).value;
+                var soluong = document.getElementById("txtSoLuong" + i).value;
+                var thanhtien = dongia * soluong;
+                document.getElementById("txtThanhTien" + i).value = thanhtien + "$";
+            }
+            catch(err){
+                alert(err.message);
+            }
         }
     </script>
 </head>
 <body>
-    <button onclick="Hello()">CLick me</button>
-    <div id="greeting"></div>
+    <form name="form1" >
+        <table>
+            <tr>
+                <th>Mã sản phẩm</th>
+                <th>Tên sản phẩm</th>
+                <th>Giá</th>
+                <th>Số lượng</th>
+                <th>Thành tiền</th>
+            </tr>
+            <tr>
+                <td>C112</td>
+                <td>Chuột Quang</td>
+                <td>10$<input type="hidden" name="dg1" id="dg1" value="10"></td>
+                <td><input type="number" name="txtSoLuong1" id="txtSoLuong1" onchange="ThanhTien(1)"></td>
+                <td><input type="text" name="txtThanhTien1" id="txtThanhTien1"></td>
+            </tr>
+            <tr>
+                <td>B124</td>
+                <td>Bàn Phím</td>
+                <td>20$<input type="hidden" name="dg2" id="dg2" value="20"></td>
+                <td><input type="number" name="txtSoLuong2" id="txtSoLuong2" onchange="ThanhTien(2)"></td>
+                <td><input type="text" name="txtThanhTien2" id="txtThanhTien2"></td>
+            </tr>
+            <tr>
+                <td>U125</td>
+                <td>USB KingMax</td>
+                <td>15$<input type="hidden" name="dg3" id="dg3" value="15"></td>
+                <td><input type="number" name="txtSoLuong3" id="txtSoLuong3" onchange="ThanhTien(3)"></td>
+                <td><input type="text" name="txtThanhTien3" id="txtThanhTien3"></td>
+            </tr>
+            <tr>
+                <td colspan="4" align="right">Total</td>
+                <td><input type="text" name="txtTongSoTien" id="txtTongSoTien"></td>
+            </tr>
+        </table>
+    </form>
 </body>
 </html>
