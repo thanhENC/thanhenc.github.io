@@ -18,7 +18,65 @@
                 document.form.txtToday.value = date;
                 document.form.txtFirstName.focus();                
             }
+
+            function OK(){
+                alert("Bạn đã đăng ký thành công!");
+            }
+
+            function drpPhysician(){
+                var drp = document.form.drpPhysicOpt;
+                var txt = document.form.txtPhysicOth;
+                var drpText = drp.options[drp.selectedIndex].text;
+                if (drpText == "Other") {
+                    txt.focus();
+                }                
+            }
+
+            function total(){
+                var txt = document.form.txtTotal;
+                var scoreAct = document.form.txtActivity.value;
+                var scorePulse = document.form.txtPulse.value;
+                var scoreGrimace = document.form.txtGrimace.value;
+                var scoreAppearance = document.form.txtAppearance.value;
+                var scoreRespiration = document.form.txtRespiration.value;
+                var scoreRespirationTest = document.form.txtRespirationTest.value;
+                if (scoreAct == "") {
+                    scoreAct = 0;
+                }
+                if (scorePulse == "") {
+                    scorePulse = 0;
+                }
+                if (scoreGrimace == "") {
+                    scoreGrimace = 0;
+                }
+                if (scoreAppearance == "") {
+                    scoreAppearance = 0;
+                }
+                if (scoreRespiration == "") {
+                    scoreRespiration = 0;
+                }
+                if (scoreRespirationTest == "") {
+                    scoreRespirationTest = 0;
+                }
+                var total = parseInt(scoreAct) + parseInt(scorePulse) + parseInt(scoreGrimace) + parseInt(scoreAppearance) + parseInt(scoreRespiration) + parseInt(scoreRespirationTest);
+                txt.value = total;
+            }
+
+            function checkScore(inputName){
+                var inputObject = document.getElementsByName(inputName)[0];
+                var res = parseInt(inputObject.value);
+                if(res < 0 || res > 2 || isNaN(res)){
+                    alert("Bạn phải nhập số từ 0 đến 2! Thử lại!");
+                    inputObject.value = "";
+                    inputObject.focus();
+                }
+                else{
+                    total();
+                }
+            }
+           
         </script>
+
     </head>
     <body style="background-color: cyan;" onload="getDay()">
         <center><img src="Bai5/Logo.gif">
@@ -59,12 +117,12 @@
                         4) Physician:
                     </td>
                     <td colspan="2">
-                        <select name="drpPhysicOpt" >
-                        <option value="Dr.WA">Dr. Warren Albert</option>
-                        <option value="Middle">Lionel Messi</option>
-                        <option value="South">Cris Ronaldo</option>
-                        <option value="Other">Other</option>
-                </select>
+                        <select name="drpPhysicOpt" onchange="drpPhysician()">
+                            <option value="Dr.WA">Dr. Warren Albert</option>
+                            <option value="Middle">Lionel Messi</option>
+                            <option value="South">Cris Ronaldo</option>
+                            <option value="Other">Other</option>
+                        </select>
                     </td>
                 </tr>
                 <tr>
@@ -83,7 +141,7 @@
                         Activity
                     </td>
                     <td width="4%" class="auto-style1">
-                        <input type="text" name="txtActivity" width="5px" >
+                        <input type="text" name="txtActivity" width="5px" onchange="checkScore('txtActivity')" >
                     </td>
                 </tr>
                 <tr>
@@ -93,7 +151,7 @@
                         Pulse
                     </td>
                     <td width="10%">
-                        <input type="text" name="txtPulse" width="5px" onChange="checkpul()">
+                        <input type="text" name="txtPulse" width="5px" onchange="checkScore('txtPulse')">
                     </td>
                 </tr>
                 <tr>
@@ -103,7 +161,7 @@
                         Grimace (Reflex, Irritability)
                     </td>
                     <td width="10%">
-                        <input type="text" name="txtGrimace" width="5px">
+                        <input type="text" name="txtGrimace" width="5px" onchange="checkScore('txtGrimace')">
                     </td>
                 </tr>
                 <tr>
@@ -113,7 +171,7 @@
                         Appearance (Skin Color)
                     </td>
                     <td width="10%">
-                        <input type="text" name="txtAppearance" width="5px" >
+                        <input type="text" name="txtAppearance" width="5px" onchange="checkScore('txtAppearance')">
                     </td>
                 </tr>
                 <tr>
@@ -123,7 +181,7 @@
                         Respiration
                     </td>
                     <td width="10%">
-                        <input type="text" name="txtRespiration" width="5px" >
+                        <input type="text" name="txtRespiration" width="5px" onchange="checkScore('txtRespiration')" >
                     </td>
                 </tr>
    
@@ -134,7 +192,7 @@
                         Respiration_test
                     </td>
                     <td width="10%">
-                        <input type="text" name="txttest" width="5px" >
+                        <input type="text" name="txtRespirationTest" width="5px" onchange="checkScore('txtRespirationTest')">
                     </td>
                 </tr>
                 <tr>
@@ -144,7 +202,7 @@
                         <h5>TOTAL</h5>
                     </td>
                     <td width="10%">
-                        <input type="text" name="txtTotal" width="5px" >
+                        <input type="text" name="txtTotal" width="5px" readonly="readonly" >
                     </td>
                 </tr>
                 <tr>
@@ -160,7 +218,7 @@
                         7) Parental Consent (required):
                     </td>
                     <td colspan="2">
-                        <input type="checkbox" name="chbParental">
+                        <input type="checkbox" name="chbParental" required="true">
                     </td>
                 </tr>
                 <tr align="center">
