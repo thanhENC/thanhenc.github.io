@@ -51,10 +51,9 @@
             if (today.getMonth() == 11 && today.getDate() > 25) {
                 christmas.setFullYear(christmas.getFullYear() + 1);
             }
-            
+
             var one_day = 1000 * 60 * 60 * 24;
-            document.getElementById("dvCountDay").innerHTML = "Only " + Math.ceil((christmas.getTime() - today.getTime()) / (one_day)) + " days until Christmas";
-            setTimeout("ChristmasCountdown()", 1000);
+            document.getElementById("dvCountDay").innerHTML = "Only " + Math.ceil((christmas.getTime() - today.getTime()) / (one_day)) + " days until Christmas";            
         }
     </script>
  
