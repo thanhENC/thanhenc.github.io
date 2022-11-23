@@ -74,6 +74,19 @@
                     total();
                 }
             }
+
+            function checkBW(){
+                var inputObject = document.form.txtBirthWeight;
+                var res = parseInt(inputObject.value);
+                if(res < 1200 || isNaN(res)){
+                    alert("Bạn phải nhập số lớn hơn 1200! Thử lại!");
+                    inputObject.value = "";
+                    inputObject.focus();
+                }
+                else{
+                    document.form.chbParental.focus();
+                }
+            }
            
         </script>
 
@@ -210,7 +223,7 @@
                         6) Birth weight (gms): Weight must be >=1200 gms.
                     </td>
                     <td colspan="2">
-                        <input type="text" name="txtBirthWeight" width="5px">
+                        <input type="text" name="txtBirthWeight" width="5px" onchange="checkBW()">
                     </td>
                 </tr>
                 <tr>
