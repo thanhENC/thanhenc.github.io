@@ -1,0 +1,79 @@
+/* Signup */
+.title {
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    margin-bottom: 10px;
+    background-color: rgb(6, 119, 95);
+    line-height: 30px;
+}
+
+/* Personal Infor -------- */
+.table_personal_infor {
+    text-align: left;
+}
+
+.c3 {
+    text-align: right;
+}
+
+/* Hobby ----------------- */
+.hobbytitle {
+    font-style: italic;
+    font-weight: bold;
+}
+
+.table_hobbies {
+    text-align: left;
+}
+
+/* Confirm----------------------- */
+.confirm_area {
+    text-align: center;
+}
+
+/* Favorite color area ------------ */
+.form-favorite-color {
+    display: flex;
+    flex-direction: column;
+}
+
+#div-blue-picker {
+    background-color: aqua;
+    width: fit-content;
+}
+
+#div-red-picker {
+    background-color: red;
+    width: fit-content;
+}
+
+#div-green-picker {
+    background-color: green;
+    width: fit-content;
+}
+
+#div-yellow-picker {
+    background-color: yellow;
+    width: fit-content;
+}
+
+#div-purple-picker {
+    background-color: purple;
+    width: fit-content;
+}
+
+/* Registered table --------------- */
+#tbl-registered-table {
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#tbl-registered-table th,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 5px;
+}

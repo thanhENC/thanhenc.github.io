@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 3</title>
+
+    <style>
+        .Norm {
+            background-color: #FFFFFF;
+        }
+
+        .red {
+            background-color: red;
+        }
+    </style>
+
+    <script>
+        var c = 0;
+        var k = 1;
+        function getTime() {
+            var today = new Date();
+            var h = today.getHours();
+            var m = today.getMinutes();
+            var s = today.getSeconds();
+            var ampm = 'am';
+            if (h >= 12) {
+                if (h > 12) h -= 12;
+                ampm = 'pm';
+            }
+            if (m < 10) m = '0' + m;
+            if (s < 10) s = '0' + s;
+            document.getElementById("time").innerHTML = h + ":" + m + ":" + s;
+            setTimeout("getTime()", 1);
+        }
+        function Rowrules() {
+            document.getElementById("myTb").rules = "rows";
+
+        }
+        function colrules() {
+            document.getElementById("myTb").rules = "cols";
+        }
+
+        function addRows() {
+            var tb = document.getElementById("myTb")
+            tb.boder = "1px";
+            tb.cellpadding = "1px";
+            k += 1;
+            //var row1 = tb.insertRow(k);
+            var row1 = tb.insertRow(k);
+            row1.id = k;
+            var cell1 = row1.insertCell(0);
+            var cell2 = row1.insertCell(0)
+            var txtattr1 = document.createTextNode("New row");
+            var txtattr2 = document.createTextNode("new row");
+            cell1.appendChild(txtattr1);
+            cell2.appendChild(txtattr2);
+            row1.setAttribute('onclick', 'red(id)');
+
+        }
+        function red(id) {
+
+            if (document.getElementById(id).className == "Norm") {
+                document.getElementById(id).className = "red";
+                c = 1;
+            }
+            else {
+                document.getElementById(id).className = "Norm";
+                c = 0;
+            }
+        }
+
+        function delRow() {
+            var i;
+            for (i = 0; i <= k; i++) {
+                if (document.getElementById(i).className == "red") {
+                    document.getElementById('myTb').deleteRow(i);
+                    k -= 1;
+                }
+            }
+        }
+
+    </script>
+
+</head>
+
+<body onload="getTime()">
+    <div id="time"></div> <br>
+    <div id="alert" onclick="alert('Bạn vừa bấm chuột trái!')" oncontextmenu="alert('Bạn vừa bấm chuột phải!')">Click
+        chuột vào dòng này. Sẽ xuất hiện thông báo phím bấm của chuột</div> <br>
+    <table id="myTb" border="1">
+        <tr id="0" onclick="red(id)" class="Norm">
+            <td> Dòng 1, cột 1</td>
+            <td> Dòng 1, cột 2</td>
+        </tr>
+        <tr id="1" class="Norm" onclick="red(id)">
+            <td>Dòng 2, cột 1</td>
+            <td>Dòng 2, cột 2</td>
+        </tr>
+    </table>
+    <input type="button" value="Thêm vào cuối" onclick="addRows()">
+    <input type="button" value="Xóa dòng đỏ" onclick="delRow()">
+    <input type="button" value="Chỉ Hiện Dòng" onclick="Rowrules()">
+    <input type="button" value="Hiển thị cột" onclick="colrules()">
+    <input type="button" value="Mở 1 trang mới" onclick="window.open('https://www.facebook.com');">
+
+</body>
+
+</html>

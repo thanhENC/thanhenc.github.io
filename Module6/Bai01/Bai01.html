@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<script>
+    function mouseEnter(){
+        mybox.style.backgroundColor = '#BD3213';
+    }
+    
+    function mouseLeave(){
+        mybox.style.backgroundColor = '#ffffff';
+    }
+    
+    var tr1 = document.getElementById('tr1');
+    var tr2 = document.getElementById('tr2');
+    var tr3 = document.getElementById('tr3');
+    
+    tr1.addEventListener('mouseenter', mouseEnter);
+    tr1.addEventListener('mouseleave', mouseLeave);
+
+    tr2.addEventListener('mouseenter', mouseEnter);
+    tr3.addEventListener('mouseleave', mouseLeave);
+
+    tr3.addEventListener('mouseenter', mouseEnter);
+    tr3.addEventListener('mouseleave', mouseLeave);
+    </script>
+    
+
+<body>
+    <table border="1" id="tb" >
+        <tr id="tr1" >
+           <th>STT</th>
+           <th>Tên</th>
+        </tr>
+        <tr id="tr1">
+           
+            <td>1</td>
+            <td>Nguyễn Thị Tự</td>
+         
+        </tr>
+        <tr id="tr2">
+           
+            <td>2</td>
+            <td>Trần Văn Kỷ</td>
+        
+        </tr>
+        <tr id="tr3">
+           
+            <td>3</td>
+            <td>Hồ Văn Nặng</td>
+        
+        </tr>
+     
+    </table>
+</body>
+</html>

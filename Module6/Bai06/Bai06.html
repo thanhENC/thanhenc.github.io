@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DANH SÁCH SINH VIÊN</title>
+    <link rel="stylesheet" href="Bai6.css">
+</head>
+
+<body>
+    <div id="content">
+        <table id="sinhviens">
+            <thead>
+                <tr>
+                    <th colspan="4" style="text-align:center; background-color:yellow">Danh sách sinh viên</th>
+                </tr>
+                <tr style="background-color: green;">
+                    <th onclick="sortTable(0)">mssv</th>
+                    <th onclick="sortTable(1)">hoTen</th>
+                    <th onclick="sortTable(2)">ngaySinh</th>
+                    <th onclick="sortTable(3)">gioiTinh</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <table id="sinhvienchitiet" style="visibility: hidden;">
+            <thead>
+                <tr>
+                    <th colspan="2" style="text-align:center; background-color:rgb(230, 193, 10)">Chi tiết thông tinh
+                        sinh viên</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        let xmlContent = '';
+        let tableSinhviens = document.getElementById('sinhviens');
+        const keyText = {
+            mssv: 'Mã Sinh Viên',
+            hoten: 'Họ tên',
+            ngaysinh: 'Ngày Sinh',
+            gioitinh: 'Giới Tính'
+        }
+
+        const onClick = (sv) => {
+            let trSv = document.getElementById('sinhvienchitiet')
+            trSv.style.visibility = 'visible'
+            tableSinhviens.style.visibility = 'collapse'
+
+            Object.keys(sv).forEach(k => {
+                let row = document.createElement('tr');
+                //mã sinh viên
+                // key
+                let td = document.createElement('td');
+                td.innerText = keyText[k];
+                row.appendChild(td);
+
+                //  họ tên
+                td = document.createElement('td');
+                td.innerText = sv[k]
+                row.appendChild(td);
+
+                trSv.children[1].appendChild(row);
+            })
+
+        }
+        fetch('sinhviens.xml').then((response) => {
+            response.text().then((xml) => {
+                xmlContent = xml;
+                let parser = new DOMParser();
+                let xmlDOM = parser.parseFromString(xmlContent, 'application/xml');
+                let sinhviens = xmlDOM.querySelectorAll('sinhvien');
+
+                sinhviens.forEach(sinhvienXmlNode => {
+                    let row = document.createElement('tr');
+
+                    row.id = 'rowItem'
+
+                    row.onclick = () => onClick({
+                        mssv: sinhvienXmlNode.children[0].innerHTML,
+                        hoten: sinhvienXmlNode.children[1].innerHTML,
+                        ngaysinh: sinhvienXmlNode.children[2].innerHTML,
+                        gioitinh: sinhvienXmlNode.children[3].innerHTML
+                    })
+                    //mã sinh viên
+                    let td = document.createElement('td');
+
+                    td.innerText = sinhvienXmlNode.children[0].innerHTML;
+                    row.appendChild(td);
+
+                    //  họ tên
+                    td = document.createElement('td');
+                    td.innerText = sinhvienXmlNode.children[1].innerHTML;
+                    row.appendChild(td);
+
+                    //ngày sinh
+                    td = document.createElement('td');
+                    td.innerText = sinhvienXmlNode.children[2].innerHTML;
+                    row.appendChild(td);
+
+                    //giới tính
+                    td = document.createElement('td');
+                    td.innerText = sinhvienXmlNode.children[3].innerHTML;
+                    row.appendChild(td);
+
+                    tableSinhviens.children[1].appendChild(row);
+
+                });
+
+            });
+        });
+
+
+
+        function sortTable(n) {
+            var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+            table = document.getElementById("sinhviens");
+            switching = true;
+            // Set the sorting direction to ascending:
+            dir = "asc";
+            /* Make a loop that will continue until
+            no switching has been done: */
+            while (switching) {
+                // Start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+
+                console.log(rows)
+                /* Loop through all table rows (except the
+                first, which contains table headers): */
+                for (i = 2; i < (rows.length - 2); i++) {
+                    // Start by saying there should be no switching:
+                    shouldSwitch = false;
+                    /* Get the two elements you want to compare,
+                    one from current row and one from the next: */
+                    x = rows[i].getElementsByTagName("TD")[n];
+                    y = rows[i + 1].getElementsByTagName("TD")[n];
+
+                    console.log(rows[i], i, n)
+                    /* Check if the two rows should switch place,
+                    based on the direction, asc or desc: */
+                    if (dir == "asc") {
+                        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                            // If so, mark as a switch and break the loop:
+                            shouldSwitch = true;
+                            break;
+                        }
+                    } else if (dir == "desc") {
+                        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                            // If so, mark as a switch and break the loop:
+                            shouldSwitch = true;
+                            break;
+                        }
+                    }
+                }
+                if (shouldSwitch) {
+                    /* If a switch has been marked, make the switch
+                    and mark that a switch has been done: */
+                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                    switching = true;
+                    // Each time a switch is done, increase this count by 1:
+                    switchcount++;
+                } else {
+                    /* If no switching has been done AND the direction is "asc",
+                    set the direction to "desc" and run the while loop again. */
+                    if (switchcount == 0 && dir == "asc") {
+                        dir = "desc";
+                        switching = true;
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

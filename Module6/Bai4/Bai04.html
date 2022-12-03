@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 4</title>
+</head>
+
+<body>
+    <table id="myTB" style="border: none;">
+        <tr id="0">
+            <td>
+                <input type="submit" id="addNode" value="THÊM NODE" onclick="AddNode()">
+            </td>
+            <td>
+                <label>NỘI DUNG</label>
+                <input type="text" name="noidung" id="themnoidung">
+            </td>
+            <td>
+                <label>VỊ TRÍ</label>
+                <input type="number" name="vitri" id="ViTri" required>
+            </td>
+        </tr>
+        <tr id="1">
+            <td>
+                <input type="submit" id="addNode" value="XÓA NODE" onclick="XoaNode()">
+            </td>
+            <td>
+            </td>
+            <td>
+                <label>VỊ TRÍ</label>
+                <input type="number" name="vitri" id="ViTri2">
+            </td>
+        </tr>
+        <tr id="2">
+            <td>
+                <input type="submit" id="addNode" value="SỬA" onclick="SuaNode()">
+            </td>
+            <td>
+                <label>NỘI DUNG SỬA</label>
+                <input type="text" name="noidung" id="noidungsua">
+            </td>
+            <td>
+                <label>VỊ TRÍ</label>
+                <input type="number" name="vitri" id="ViTri3">
+            </td>
+        </tr>
+    </table>
+
+    <p>Web note</p>
+    <div id="WebNode">
+        <li id="node"></li>
+        <li id="node"></li>
+        <li id="node"></li>
+        <li id="node"></li>
+        <li id="node"></li>
+        <li id="node"></li>
+    </div>
+    <script>
+        var vitri = document.getElementById('ViTri').value;
+
+        function AddNode() {
+
+            var vitri = document.getElementById('ViTri').value;
+            var listNode = document.getElementById('WebNode')
+            var noidungthem = document.getElementById('themnoidung')
+            listNode.children[vitri].innerText = noidungthem.value;
+
+            // listNode.appendChild(li)
+        }
+
+        function XoaNode() {
+            var vitri2 = document.getElementById('ViTri2').value;
+            var listNode = document.getElementById('WebNode')
+            listNode.children[vitri2].innerText = '';
+        }
+
+        function SuaNode() {
+
+            var vitri3 = document.getElementById('ViTri3').value;
+            var listNode = document.getElementById('WebNode')
+            var noidungthem = document.getElementById('noidungsua')
+            listNode.children[vitri3].innerText = noidungthem.value;
+
+            // listNode.appendChild(li)
+        }
+    </script>
+</body>
+
+</html>

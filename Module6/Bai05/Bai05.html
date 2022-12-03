@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table id="kq" border="1px solid #ccc">
+        <tr>
+            <td id="0" colspan="100%" style="text-align:center;"> Chi tiết thông tin Sinh Viên</td>
+        </tr>
+        <tr>
+            <td>Mã sinh viên</td>
+            <td id="1"></td>
+        </tr>
+        <tr>
+            <td>Họ tên</td>
+            <td id="2"></td>
+        </tr>
+        <tr>
+            <td>Ngày sinh</td>
+            <td id="3"></td>
+        </tr>
+        <tr>
+            <td>Giới tính</td>
+            <td id="4"></td>
+        </tr>
+    </table>
+</body>
+
+<script>
+    var txt = "<sinhvien>";
+    txt += "<mssv>K123456789</mssv>";
+    txt += "<hoTen>Họ và Tên</hoTen>";
+    txt += "<ngaySinh>9/9/1999</ngaySinh>";
+    txt += "<gioiTinh>Nữ</gioiTinh>";
+    txt += "</sinhvien>";
+
+    var parser = new DOMParser();
+    var xmlDoc = parser.parseFromString(txt, "text/xml");
+    var kq = document.getElementById("kq");
+    var msv = document.getElementById("1");
+    var hoten = document.getElementById("2");
+    var ngaysinh = document.getElementById("3");
+    var gioitinh = document.getElementById("4");
+
+    msv.innerHTML = xmlDoc.getElementsByTagName("mssv")[0].childNodes[0].nodeValue
+    hoten.innerHTML = xmlDoc.getElementsByTagName("hoTen")[0].childNodes[0].nodeValue
+    ngaysinh.innerHTML = xmlDoc.getElementsByTagName("ngaySinh")[0].childNodes[0].nodeValue
+    gioitinh.innerHTML = xmlDoc.getElementsByTagName("gioiTinh")[0].childNodes[0].nodeValue
+</script>
+
+</html>
