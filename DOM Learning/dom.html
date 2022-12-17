@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>    
+</head>
+<body>
+    <p id="para">Hello World</p>
+    <input type="text" id="input" placeholder="input text" onchange="changeText()">
+
+    <script type="text/javascript">
+        "use strict";
+        const para_object = document.getElementById("para"),
+              input_object = document.getElementById("input");
+        let a = 4;
+        function changeText() {
+            let value = input_object.value;
+            if (value == "") {
+                para_object.innerHTML = "Hello World";
+            }
+            else {
+                para_object.innerHTML = value;
+            }
+            alert(a);
+        }
+    </script>
+</body>
+</html>

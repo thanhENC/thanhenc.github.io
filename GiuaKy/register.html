@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký</title>
+    <link rel="shortcut icon" href="assets/img/ava-vanan.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <section class="header"></section>
+    <section class="content">
+        <table>
+            <tr>
+                <td class="ava-section">
+                    <container class="avata-container"></container>
+                </td>
+                <td class="content-section">
+                    <form id="form-register">
+                        <label for="txtFullname">Họ và tên</label>
+                        <br>
+                        <input type="text" name="txtFullname" id="txtFullname" placeholder="Nguyễn Văn A...">
+                        <br>
+                        <br>
+                        <label for="txtPhone">Số điện thoại</label>
+                        <br>
+                        <input type="text" name="txtPhone" id="txtPhone" placeholder="0909 456 789...">
+                        <br>
+                        <br>
+                        <label for="txtFormContent">Nội dung thông điệp</label>
+                        <br>
+                        <textarea name="txtFormContent" id="txtFormContent" placeholder="Nội dung..."></textarea>
+                        <br>
+                        <br>
+                        <input class="form-button" type="button" value="Đăng Ký" onclick="register()">
+                        <input class="form-button" type="button" value="Nhập lại" onclick="reset()">
+                    </form>
+                </td>
+            </tr>
+        </table>
+    </section>
+    <section class="footer"></section>
+    <script>
+        $(function () {
+            $(".header").load("header.html");
+            $(".footer").load("footer.html");
+            $(".avata-container").load("marquee-avata.html");
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+
+<body>
+    <h1>DOM</h1>
+    <p id="demo">This is a paragraph.</p>
+    <div id="demo1"></div>
+    <button type="button" onclick="myFunction()">Try it</button>
+    <script>
+        const x = document.getElementById("demo");
+        const y = document.getElementById("demo1");
+        function myFunction() {
+            //change 1
+            // x.style.fontSize = "25px";
+            // x.style.color = "red";
+            // x.innerHTML = "Hello World!";
+            
+            // y.innerHTML = `
+            //     <p>Đoạn văn bản sinh ra từ DOM</p>
+            //     <a href="https://theweekdays.live">The Weekdays</a>
+            // `;
+
+            //change 2
+            // const z = document.createElement("p");
+            // const t = document.createTextNode("This is a new paragraph.");
+            // z.appendChild(t);
+            // document.body.appendChild(z);
+
+            //change 3
+            // let text = "";
+            // for (let i=0; i<5; i++) {
+            //     text += "The number is " + i + "<br>";
+            // }
+            // y.innerHTML = text;
+
+            //change 4 - for loop
+            // const name = {
+            //     firstName: "The",
+            //     lastName: "Weekdays",
+            //     age: 1
+            // };
+            // let txt="";
+            // for (let x in name) {
+            //     txt += name[x] + " ";
+            // }
+            // y.innerHTML = txt;
+
+            //change 5 - forEach
+            // const number = [1, 2, 3, 4, 5];
+            // let txt = "";
+            // number.forEach(myFunction);
+            // function myFunction(value) {
+            //     txt += value + " ";
+            // }
+            // y.innerHTML = txt;
+
+            //change 6 - for of
+            // const car = ["BMW", "Volvo", "Saab", "Ford"];
+            // let txt = "";
+            // for (let x of car) {
+            //     txt += x + " ";
+            // }
+            // y.innerHTML = txt;
+
+            //change 7 - function
+            // let num = sumAll(1, 123, 500, 115, 44, 88);
+            // function sumAll(...args){
+            //     let sum = 0;
+            //     for (let i of args) sum += i;
+            //     return sum;
+            // }
+            // y.innerHTML = num;
+
+            //change 8 - arrow function
+            // const sum = (a, b) => a + b;
+            // y.innerHTML = sum(5, 10);
+
+            //change 9 - arrow function
+            // function sayHello(name, callbackFunc){
+            //     var say = "Hi, " + name.toUpperCase();
+            //     return callbackFunc(say);
+            // }
+            // var result = sayHello("The Weekdays", function(args){
+            //     return args;});
+            // y.innerHTML = result;
+
+            //change 10 - arrow function advanced
+            //1
+            // sayHello = (name) => {
+            //     var say = "Hi, " + name.toUpperCase();
+            //     return say;
+            // }
+            // y.innerHTML = sayHello("The Weekdays");
+            //2 arrow function trong một đối tượng
+            // const person = {
+            //     firstName: "The",
+            //     lastName: "Weekdays",
+            //     fullName: function() {
+            //         return this.firstName + " " + this.lastName;
+            //     }
+            // }
+            // y.innerHTML = person.fullName();
+            //3 arrow function trong một đối tượng với nhiều params
+            // const product = function(code, name, price) {
+            //     this.code = code;
+            //     this.name = name;
+            //     this.price = price;
+            // }
+            // product.prototype.showInfo = function() {
+            //     return this.code + " " + this.name + " " + this.price;
+            // }
+            // product.prototype.changePrice = function(newPrice) {
+            //     this.price = newPrice;
+            // }
+            // product.prototype.changeName = function(newName) {
+            //     this.name = newName;
+            // }
+            // product.prototype.changeCode = function(newCode) {
+            //     this.code = newCode;
+            // }
+            // const p1 = new product(1, "The Weekdays", 100000);
+            // p1.changeCode(2);
+            // p1.changeName("The Weekdays 2");
+            // p1.changePrice(200000);
+            // y.innerHTML = p1.showInfo();
+            // console.log(p1);
+
+            //change 11 - setTimeout function
+            // setTimeout(function() {
+            //     console.log("Hello");
+            // }, 1000);
+
+            //change 12 - setInterval function
+            // setInterval(function() {
+            //     const message = document.createElement("p");
+            //     const text = document.createTextNode("Hello");
+            //     message.appendChild(text);
+            //     document.body.appendChild(message);
+            // }, 1000);
+
+            //change 13 - document.Write
+            // let content = document.getElementById("demo").innerHTML;
+            // document.write("<p> The text from the intro paragraph " + content + "</p>");
+
+            //change 14 - document.createElement
+        }
+    </script>
+</body>
+
+</html>
