@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@700;800&display=swap');
+
+body {
+    background-color: #ffecd0;
+    font-family: Lexend, sans-serif;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+}
+
+table {
+    width: 100%;
+}
+
+td.ava-section {
+    width: 30%;
+}
+
+td.content-section {
+    padding: 0% 10%;
+    width: 70%;
+    height: 100%;
+}
+
+img.img-ava {
+    margin: 10%;
+    width: 80%;
+    border-radius: 10%;
+}
+
+img.img-content {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Content Section */
+.content-section {
+    text-align: justify;
+}
+
+/* Footer */
+div.footer {
+    font-size: 14px;
+    text-align: right;
+    padding: 0% 5%;
+}
+
+/* Header */
+section.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+/* Register Form */
+form#form-register {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid rgb(255, 126, 126);
+    background-color: rgb(255, 221, 175);
+    border-radius: 10px;
+}
+
+form#form-register input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+form#form-register textarea {
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 100px;
+    max-height: 200px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+form#form-register input.form-button {
+    width: 90%;
+    background-color: #34575a;
+    color: white;
+    padding: 14px 20px;
+    margin: 5px 5%;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+form#form-register input.form-button:hover {
+    background-color: rgb(179, 88, 88);
+    transform: matrix(1.1, 0, 0, 1.1, 0, 0);
+}

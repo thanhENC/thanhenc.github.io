@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Json Object & Json Array</title>
+    <link rel="shortcut icon" href="assets/img/ava-vanan.png" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <section class="header"></section>
+    <section class="content">
+        <table>
+            <tr>
+                <td class="ava-section">
+                    <container class="avata-container"></container>
+                </td>
+                <td class="content-section">
+                    <p>
+                        Một đối tượng Object chứa các cặp giá trị string/value không cần thứ tự, được bao trong cặp “{}”, các giá trị bên trong được định dạng “key:value” và chia cách nhau bởi dấu “,”. Value ở đây có thể là chuỗi, số, true- false, null…Có thể xem mô tả cùng ví dụ sau:
+                    </p>
+                    <p>Json cũng khá tương đồng với Object trong Javascript. Tuy nhiên, Object trong Json vẫn có những giới hạn như:
+                        <ul>
+                            <li>Key: phải luôn nằm trong dấu ngoặc kép, không được phép là biến số.</li>
+                            <li>Value: Chỉ cho phép các kiểu dữ liệu cơ bản: numbers, String, Booleans, arrays, objects, null. Không cho phép function, date, undefined.</li>
+                            <li>Không cho phép dấy phẩy cuối cùng như Object trong Javascript.</li>
+                        </ul>
+                    </p>
+
+                    <h3>Các kiểu Object: Kiểu OBJECT, Kiểu OBJECT IN ARRAY, Kiểu NEST OBJECT</h3>
+    
+                    Json Array: Mảng trong JSON đại diện cho danh sách thứ tự các giá trị. Mảng trong JSON có thể lưu trữ nhiều giá trị. Nó có thể lưu trữ chuỗi, số, boolean hoặc đối tượng trong mảng JSON. <br>
+    
+                    Trong mảng JSON, các giá trị phải được phân tách bằng dấu phẩy. <br>
+    
+                    [] ( Dấu ngoặc vuông) đại diện cho mảng JSON. <br>
+    
+                    Các loại array (mảng): Mảng JSON của chuỗi, Mảng JSON của các số, Mảng JSON của các giá trị boolean, Mảng JSON của các đối tượng, Mảng đa chiều trong JSON
+                </td>
+            </tr>
+        </table>
+    </section>
+    <section class="footer"></section>
+    <script>
+        $(function () {
+            $(".header").load("reuseheader.html");
+            $(".footer").load("reusefooter.html");
+            $(".avata-container").load("student-ava.html");
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORM và Control</title>
+    <link rel="shortcut icon" href="assets/img/ava-vanan.png" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <section class="header"></section>
+    <section class="content">
+        <table>
+            <tr>
+                <td class="ava-section">
+                    <container class="avata-container"></container>
+                </td>
+                <td class="content-section">
+                    <h3><u>Các thuộc tính của form</u></h3>
+                    <ul>
+                        <li>name: tên Form</li>
+                        <li>action: chỉ định trang web sẽ nhận xử lý dữ liệu từ Form này khi có sự kiện click của button SUBMIT</li>
+                        <li>method: xác định phương thức chuyển dữ liệu (POST, GET, PUT, DELETE)</li>
+                        <li>button: Sử dụng để người dùng ra lệnh thực hiện công việc.</li>
+                    </ul>
+                    <hr>
+                    <h3><u>Trên web có 3 loại nút:</u></h3>
+                    <ul>
+                        <li>submit: Tự động ra lệnh gửi dữ liệu</li>
+                        <li>reset: đưa mọi dữ liệu về trạng thái mặc định</li>
+                        <li>normal: người lập trình tự xử lý</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+    </section>
+    <section class="footer"></section>
+    <script>
+        $(function () {
+            $(".header").load("reuseheader.html");
+            $(".footer").load("reusefooter.html");
+            $(".avata-container").load("student-ava.html");
+        });
+    </script>
+</body>
+
+</html>
